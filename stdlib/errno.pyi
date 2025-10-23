@@ -88,6 +88,106 @@ EALREADY: Final[Literal[37]]
 EINPROGRESS: Final[Literal[36]]
 ESTALE: Final[Literal[70]]
 EDQUOT: Final[Literal[69]]
+ECANCELED: Final[Literal[89]]  # undocumented
+ENOTRECOVERABLE: Final[Literal[104]]  # undocumented
+EOWNERDEAD: Final[Literal[105]]  # undocumented
+
+if sys.platform == "sunos5" or sys.platform == "solaris":  # noqa: Y008
+    ELOCKUNMAPPED: Final[int]
+    ENOTACTIVE: Final[int]
+
+if sys.platform != "win32":
+    ENOTBLK: Final[Literal[15]]
+    EMULTIHOP: Final[Literal[95]]
+
+if sys.platform == "darwin":
+    # All of the below are undocumented
+    EAUTH: Final[Literal[80]]
+    EBADARCH: Final[Literal[86]]
+    EBADEXEC: Final[Literal[85]]
+    EBADMACHO: Final[Literal[88]]
+    EBADRPC: Final[Literal[72]]
+    EDEVERR: Final[Literal[83]]
+    EFTYPE: Final[Literal[79]]
+    ENEEDAUTH: Final[Literal[81]]
+    ENOATTR: Final[Literal[93]]
+    ENOPOLICY: Final[Literal[103]]
+    EPROCLIM: Final[Literal[67]]
+    EPROCUNAVAIL: Final[Literal[76]]
+    EPROGMISMATCH: Final[Literal[75]]
+    EPROGUNAVAIL: Final[Literal[74]]
+    EPWROFF: Final[Literal[82]]
+    ERPCMISMATCH: Final[Literal[73]]
+    ESHLIBVERS: Final[Literal[87]]
+    if sys.version_info >= (3, 11):
+        EQFULL: Final[Literal[106]]
+        ENOTCAPABLE: Final[Literal[107]]  # available starting with 3.11.1
+
+if sys.platform != "darwin":
+    EDEADLOCK: Final[int]
+
+if sys.platform != "win32" and sys.platform != "darwin":
+    ECHRNG: Final[int]
+    EL2NSYNC: Final[int]
+    EL3HLT: Final[int]
+    EL3RST: Final[int]
+    ELNRNG: Final[int]
+    EUNATCH: Final[int]
+    ENOCSI: Final[int]
+    EL2HLT: Final[int]
+    EBADE: Final[int]
+    EBADR: Final[int]
+    EXFULL: Final[int]
+    ENOANO: Final[int]
+    EBADRQC: Final[int]
+    EBADSLT: Final[int]
+    EBFONT: Final[int]
+    ENONET: Final[int]
+    ENOPKG: Final[int]
+    EADV: Final[int]
+    ESRMNT: Final[int]
+    ECOMM: Final[int]
+    EDOTDOT: Final[int]
+    ENOTUNIQ: Final[int]
+    EBADFD: Final[int]
+    EREMCHG: Final[int]
+    ELIBACC: Final[int]
+    ELIBBAD: Final[int]
+    ELIBSCN: Final[int]
+    ELIBMAX: Final[int]
+    ELIBEXEC: Final[int]
+    ERESTART: Final[int]
+    ESTRPIPE: Final[int]
+    EUCLEAN: Final[int]
+    ENOTNAM: Final[int]
+    ENAVAIL: Final[int]
+    EISNAM: Final[int]
+    EREMOTEIO: Final[Literal[5]]
+    # All of the below are undocumented
+    EKEYEXPIRED: Final[int]
+    EKEYREJECTED: Final[int]
+    EKEYREVOKED: Final[int]
+    EMEDIUMTYPE: Final[int]
+    ENOKEY: Final[int]
+    ENOMEDIUM: Final[int]
+    ERFKILL: Final[int]
+
+    if sys.version_info >= (3, 14):
+        EHWPOISON: Final[int]
+
+if sys.platform == "win32":
+    # All of these are undocumented
+    WSABASEERR: Final[int]
+    WSAEACCES: Final[Literal[13]]
+    WSAEADDRINUSE: Final[Literal[48]]
+    WSAEADDRNOTAVAIL: Final[Literal[49]]
+    WSAEAFNOSUPPORT: Final[Literal[47]]
+    WSAEALREADY: Final[Literal[37]]
+    WSAEBADF: Final[Literal[9]]
+    WSAECONNABORTED: Final[Literal[53]]
+    WSAECONNREFUSED: Final[Literal[61]]
+    WSAECONNRESET: Final[Literal[54]]
+    WSAEDESTADDRREQ: Final[Literal[39]]
     WSAEDISCON: Final[int]
     WSAEDQUOT: Final[Literal[69]]
     WSAEFAULT: Final[Literal[14]]
@@ -125,3 +225,4 @@ EDQUOT: Final[Literal[69]]
     WSANOTINITIALISED: Final[int]
     WSASYSNOTREADY: Final[int]
     WSAVERNOTSUPPORTED: Final[int]
+
